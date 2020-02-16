@@ -15,15 +15,15 @@
     body {
       background: repeating-linear-gradient(-45deg,
       #EF476F 0, #EF476F 100px,
-      #fff 100px, #fff 110px,
+      #5c5c5c 100px, #5c5c5c 110px,
       #FFD166 110px, #FFD166 210px,
-      #fff 210px, #fff 220px,
+      #5c5c5c 210px, #5c5c5c 220px,
       #06D6A0 220px, #06D6A0 320px,
-      #fff 320px, #fff 330px,
+      #5c5c5c 320px, #5c5c5c 330px,
       #118AB2 330px, #118AB2 430px,
-      #fff 430px, #fff 440px,
+      #5c5c5c 430px, #5c5c5c 440px,
       #073B4C 440px, #073B4C 540px,
-      #fff 540px, #fff 550px);
+      #5c5c5c 540px, #5c5c5c 550px);
       background-size: 778px 778px;
       /* This is unique for this background, need to find a pattern and develop a formula */
       -webkit-animation: slide 20s infinite linear forwards;
@@ -84,6 +84,10 @@
       text-align: left;
       margin: 0;
       padding: 20px;
+      display: flex;
+      flex-flow: column nowrap;
+      height: 100vh;
+      box-sizing: border-box;
     }
 
     main {
@@ -106,11 +110,11 @@
     }
 
     .singleStrock {
-      text-shadow: -1px 1px 0 #000, 1px 1px 0px #000, 1px -1px 0px #000, -1px -1px 0px #000;
+      text-shadow: -1px 1px 0 #5c5c5c, 1px 1px 0px #5c5c5c, 1px -1px 0px #5c5c5c, -1px -1px 0px #5c5c5c;
     }
 
     .doubleStrock {
-      text-shadow: -2px 2px 0 #000, 2px 2px 0px #000, 2px -2px 0px #000, -2px -2px 0px #000;
+      text-shadow: -2px 2px 0 #5c5c5c, 2px 2px 0px #5c5c5c, 2px -2px 0px #5c5c5c, -2px -2px 0px #5c5c5c;
     }
 
     section p {
@@ -118,6 +122,31 @@
       font-size: 2.2rem;
       line-height: 1.6;
       padding: 0;
+    }
+
+    .jumbo {
+      font-size: 8rem;
+    }
+
+    .taCenter {
+      text-align: cetner;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #fff;
+    }
+
+    a:hover {
+      text-decoration: none;
+      border-bottom: 2px solid #fff;
     }
   </style>
 </head>
@@ -350,12 +379,16 @@
       </svg>
     </section>
     <section>
-        <span>✋🏻</span>
+      <span class="jumbo taCenter">Hi there ✋🏻</span>
       <h1>
-        Jewel Michael here. <span>So nice to meet you</span>😊</h1>
-      <p>Just an ordinary guy who love to design 🎨 stuffs. I have got pretty good experience in App Designing 📱 and Website
-        Designing 💻. Use Adobe tools like Illustrator, Photoshop for creating graphic designs 👨🏻‍🎨, and XD for wireframing
-        and prototyping 🧩. Feel free to check my 👻 facebok, 📸 instagram or 🤵🏻 linkedin profiles to know more.</p>
+        its
+        <span class="doubleStrock">Jewel Micahel</span> here. So nice to meet you</span>😊</h1>
+      <p>Am just an ordinary guy who loves to design 🎨 stuffs. I have got experience in App Designing 📱 and Website Designing
+        💻. Use Adobe tools like Illustrator, Photoshop for creating graphic designs 👨🏻‍🎨, and XD for wireframing and
+        prototyping 🧩. Feel free to check my 👻
+        <a href="https://www.facebook.com/jeweltmichael" target="_blank">facebok</a>, 📸
+        <a href="https://www.instagram.com/jeweltmichael/" target="_blank">instagram</a> or 🤵🏻
+        <a href="https://www.linkedin.com/in/jewelmichael" target="_blank">linkedin</a> profiles to know more.</p>
       <span>Thank you.</span>
     </section>
   </main>
@@ -364,7 +397,7 @@
     <div>
       <a href="tel:+919037363792">903 736 3792</a>
       <a href="mailto:jeweltmichael@gmail.com">jeweltmichael@gmail.com</a>
-      <a href="">Resume</a>
+      <a href="https://drive.google.com/open?id=1FRnLRT5MFbImIF9Ur6M7ZpK2_DcYlZ8d" target="_blank">Resume</a>
     </div>
   </footer>
 </body>
