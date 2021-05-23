@@ -1,0 +1,45 @@
+@import '../styles/global';
+
+.pageWrapper{
+  align-items: center;
+  background-color: $colorBG;
+  box-shadow: -15px 0 35px 0px rgba(0, 0, 0, 10%);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  .pageNavWrapper{
+    align-self: center;
+    background-color: $colorWhite;
+    flex: 0 0 300px;
+    height: 100vh;
+    justify-content: flex-start;
+    padding: $spacer*2;
+
+    // @include media-breakpoint-down(sm){
+      position: relative;
+      z-index:0;
+    // }    
+
+  }
+  .pageContentWrapper{
+    flex: 1 0 0%;
+    height: 100vh;
+    overflow: auto;
+
+    @include media-breakpoint-down(sm){
+      position: relative;
+      z-index:0;
+      &:before{
+        content:'';
+        position: absolute;
+        z-index: 1;
+        top:0;
+        right:0;
+        bottom:0;
+        left: 0;
+        background-color: rgba($colorBack, $alpha: 0.7);
+      }
+    }
+  }
+}
