@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './menu.module.scss';
 
 function Hammenu() {
-  const [count, setCount] = useState<boolean>(false);
-
-  // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
-  });
+  const [click, setClick] = useState<boolean>(false);
 
   return (
-    <div className={`${styles.plate} ${styles.plate4} ${count ? styles.active : ''}`} onClick={() => setCount(!count)}>
+    <div className={`${styles.plate} ${styles.plate4} ${click ? styles.active : ''}`} onClick={() => setClick(!click)}>
       <svg className={`${styles.burger}`} version="1.1" height="100" width="100" viewBox="0 0 100 100">
         <path className={`${styles.line} ${styles.line1}`} d="M 50,35 H 30" />
         <path className={`${styles.line} ${styles.line2}`} d="M 50,35 H 70" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 import Hammenu from "../../elements/Hammenu/menu";
 
@@ -7,37 +7,44 @@ class Navigation extends React.Component {
   public render() {
     return (
       <React.Fragment>
-        <span className={`${styles.navIconBox} ${styles.close}`}>
-          <Hammenu />
-        </span>
+        {window.innerWidth < 640 &&
+          <span className={`${styles.navIconBox} ${styles.close}`}>
+            <Hammenu />
+          </span>
+        }
         <ul className={styles.navigation}>
           <li className={styles.navigation_item}>
-            <Link
+            <NavLink
               className={styles.navigation_item_link}
+              activeClassName={styles.isActive}
               to="/"
+              exact
             >home
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.navigation_item}>
-            <Link
+            <NavLink
               className={styles.navigation_item_link}
+              activeClassName={styles.isActive}
               to="/About"
             >about
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.navigation_item}>
-            <Link
+            <NavLink
               className={styles.navigation_item_link}
+              activeClassName={styles.isActive}
               to="/Work"
             >work
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.navigation_item}>
-            <Link
+            <NavLink
               className={styles.navigation_item_link}
+              activeClassName={styles.isActive}
               to="/Contact"
             >contact
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </React.Fragment>

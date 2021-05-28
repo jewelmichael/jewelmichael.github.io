@@ -1,72 +1,40 @@
-@import '../../styles/global';
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
-// @include media-breakpoint-down(sm){
-  .navIconBox{
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    z-index: 0;    
-    right: 30px;
-    transform: rotate(0);
-    // @include transition(transform .3s ease);
-
-    // span{
-    //   background-color: red;
-    //   border-radius: 2px;
-    //   height: 2px;
-    //   position: absolute;
-    //   transform: rotate(0) translate(0, -50%);
-    //   width: 70%;
-    //   z-index: 1;
-    //   top: 50%;
-    //   left: 5%;
-    // }
-    // &:before, &:after{
-    //   content: '';
-    //   position: absolute;
-    //   top: 5px;
-    //   left: 5%;
-    //   right: 50%;
-    //   background-color: red;
-    //   height: 2px;
-    //   border-radius: 2px;
-    //   transform-origin: 0 0;
-    //   @include transition(all .3s ease);
-    // }
-    // &:after{
-    //   top: unset;
-    //   bottom:5px;
-    // }
-    // &.close{
-    //   transform: rotate(45deg);
-    //   @include transition(transform .3s ease);
-    //   span{
-    //     right : 5%;
-    //     width: auto;
-    //   }
-    //   &:after,&:before {
-    //     transform: rotate(90deg);
-    //     width: 90%;
-    //     left: 15px;
-    //     top: 0;
-    //   }
-    //   &:before {
-    //     opacity: 0;
-    //   }
-    // }
-  }
-// }    
+.navIconBox{
+  display: inline-block;
+  height: 30px;
+  position: absolute;
+  right: 30px;
+  transform: rotate(0);
+  width: 30px;
+  z-index: 0;    
+}    
 
 .navigation{
   padding:3rem 3rem 0;
   &_item{
-    padding: $spacer 0;
+    padding: 0;
     &_link{
       @include transition(color .3s ease, letter-spacing .3s ease);
       color: $colorFontLight;
       font-size: 2.1rem;
       letter-spacing: 0;
+      position: relative;
+      z-index:0;
+      &:before{
+        content:'';
+        @include transition(right 0.3s ease, opacity 0.3s ease);
+        background-color: $colorPrimary;
+        border-radius: 10px;
+        bottom: 13px;
+        height:10px;
+        right:0;
+        opacity:0;
+        position: absolute;
+        transform: translateY(50%);
+        width:10px;
+      }
       &:hover{
         color: $colorFont;
         letter-spacing: 2px;
@@ -74,6 +42,14 @@
       &.active{
         color: $colorFont;
         letter-spacing: 2px;
+      }
+      &.isActive{
+        color: $colorPrimary;
+        letter-spacing: 2px;
+        &:before{
+          right:-15px;
+          opacity:1;
+        }
       }
     }
   }
