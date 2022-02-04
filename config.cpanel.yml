@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/jewesitn/public_html/
+    - / -R images $DEPLOYPATH
