@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/jewesitn/public_html/
-    - /bin/cp /repositories/githubSite/* $DEPLOYPATH
